@@ -1,0 +1,14 @@
+Q1:TREL = poly2trellis( CL, [13, 15, 15, 17]);% in octal   % 提问1：这里说明编码率是多少？
+A1:R = 1/4
+Q2:demod_out_hard = demodulation_hard(chan_out,mod_mode);  %  硬解调    %  提问2：  demodulation_hard和demodulation_soft输出的含义有何不同？
+A2: demodulation_hard:直接判决,输出的是比特,demodulation_soft:输出的是处理后的复数
+Q3: [num_raw, ratio_raw] = biterr(~demod_out_hard, cenc_o); % 提问3：RawBER是指什么？
+A3:只有硬解调, 没有软译码情况下, 卷积码输出比特的误码率.
+Q4:decoder_in_soft = Inf*(2*demod_out_hard-1);  % 提问4：这句代码的作用是什么？为什么要有这句
+A4:硬解调的输出是[ 0 1], 要送入软译码器, 须模拟极化.[0->-inf, 1->inf]
+
+
+
+	
+
+

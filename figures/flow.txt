@@ -1,0 +1,12 @@
+    convenc            modulate              awgn           
+msg--------->cenc_o-------------->DataModel------->chan_out---
+                                                             |                                      
+       cc <----                                              |                            
+               \ decode_soft                   demod_hard    |                            
+                <------------demod_out_hard <----------------|                            
+    cc_hard<---/                                             | 
+                                               demod_soft    |                            
+    cc_soft<-----------------demod_out_soft <----------------|                            
+                                                                                          
+                                                            
+                                                            

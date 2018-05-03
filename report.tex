@@ -46,28 +46,28 @@
 % =============================================
 
 \section{实验要求}
-  系统差分方程和传输函数是线性系统的重要概念，通过分析系统差分方程和传输函数的特性，编程查看系统零极点分布，加深对线性系统的了解。
+	仿真比较硬解调,硬解调+软译码, 软解调+软译码
 \section{总体设计}
-  \subsection{作业1}
+	  \lstinputlisting[  breaklines=false ]{figures/flow.txt}
 
 \section{工程结构}
     \lstinputlisting[language=MATLAB]{tree.txt}
 
 
+\section{几个小问题}
+    \lstinputlisting{questions.txt}
 \section{结果分析}
-  \subsection{作业1}
     \begin{clause}
-	\item 对a的分析
+	\item 仿真
       \begin{center}
-        \includegraphics[width=0.6\linewidth]{01.jpg}
+        \includegraphics[width=0.6\linewidth]{main.jpg}
       \end{center}
+	 \item 相对于硬解调, 加上软译码效果会提高, 如果是软解调加上软译码效果会大幅增加
+	 \item 在硬解调的情况下, 加上软译码, 在同等的BER下, 可减少1.5dB的SNR
     \end{clause}
+  	
 
 \section{具体实现}
-  \subsection{零极点分布图}
-    \begin{clause}
-	\item a的代码
-      \lstinputlisting[language=MATLAB]{code/do.m}
-    \end{clause}
+      \lstinputlisting[language=MATLAB]{code/main_c4_withCoder.m}
 
 \end{document}
