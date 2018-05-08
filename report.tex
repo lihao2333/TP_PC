@@ -6,12 +6,12 @@
 \newcommand{\major}{通信工程}
 \newcommand{\name}{李昊}
 \newcommand{\stuid}{2014210192}
-\newcommand{\newdate}{2017-10-09}
+\newcommand{\newdate}{\today}
 \newcommand{\loc}{北邮教二509}
 
 \newcommand{\course}{通信系统与仿真}
 \newcommand{\tutor}{赵慧}
-\newcommand{\newtitle}{系统传输函数零极点分析}
+\newcommand{\newtitle}{M序列的产生及分析}
 
 % =============================================
 % Part 1 Main document
@@ -46,28 +46,38 @@
 % =============================================
 
 \section{实验要求}
-	仿真比较硬解调,硬解调+软译码, 软解调+软译码
+	利用函数testMsquence.m.      设n=9, 自己取2个不同的本原多项式（每个同学应该都不一样哦）， 生成2个码字序列，画出其自相关性和互相关性。
 \section{总体设计}
-	  \lstinputlisting[  breaklines=false ]{figures/flow.txt}
+        \includegraphics[width=0.8\linewidth]{graph.jpg}
+\section{核心知识点}
+	\begin{clause}
+	\item M序列:一种产生固定周期的伪随机序列的方法
+	\item 相关性: 检测信号的相似度, 可以用来验证随机性质
+	\item 本原多项式: M序列发生器的结构必须是本原多项式, 可以用primpoly产生
+	 \end{clause}
+
 
 \section{工程结构}
-    \lstinputlisting[language=MATLAB]{tree.txt}
+    \lstinputlisting{tree.txt}
 
-
-\section{几个小问题}
-    \lstinputlisting{questions.txt}
 \section{结果分析}
     \begin{clause}
 	\item 仿真
       \begin{center}
-        \includegraphics[width=0.6\linewidth]{main.jpg}
+        \includegraphics[width=0.8\linewidth]{main.jpg}
       \end{center}
-	 \item 相对于硬解调, 加上软译码效果会提高, 如果是软解调加上软译码效果会大幅增加
-	 \item 在硬解调的情况下, 加上软译码, 在同等的BER下, 可减少1.5dB的SNR
+	 \item 通过互相关可以看出俩个序列是不相关的, 符合伪随机序列
     \end{clause}
   	
 
 \section{具体实现}
-      \lstinputlisting[language=MATLAB]{code/main_c4_withCoder.m}
+    \begin{clause}
+	\item generate M sequence
+	  \lstinputlisting[language=MATLAB]{code/m_sequence.m}
+	 \item calculate corlerate of sequence
+	  \lstinputlisting[language=MATLAB]{code/CorofCode.m}
+	 \item test m sequence
+	  \lstinputlisting[language=MATLAB]{code/testMsquence.m}
+    \end{clause}
 
 \end{document}

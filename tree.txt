@@ -1,11 +1,8 @@
-.
-├── convEncode.m
-├── demodulation_hard.m
-├── demodulation_soft.m
-├── do.m
-├── LogMAPdecode.m
-├── main_c4_withCoder.m
-├── modulation36211.m
-└── next.m
+code
+├── CorofCode.m
+├── Doxyfile
+├── m_sequence.m
+├── testMsquence.m
+└── testWalsh.m
 
-0 directories, 8 files
+0 directories, 5 files
